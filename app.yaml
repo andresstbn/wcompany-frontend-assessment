@@ -1,0 +1,14 @@
+runtime: python312
+service: frontend
+
+handlers:
+- url: /(.*\.(js|css|png|jpg|json|ico))$
+  static_files: dist/\1
+  upload: dist/.*\.(js|css|png|jpg|json|ico)$
+
+
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always
+  redirect_http_response_code: 301
