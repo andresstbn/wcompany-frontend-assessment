@@ -14,7 +14,6 @@ export const validateCreditCard = (cardNumber: string) => {
         return {
             valid: false,
             cardType: null,
-            message: 'Número de tarjeta no válido para Visa o Mastercard.'
         };
     }
 

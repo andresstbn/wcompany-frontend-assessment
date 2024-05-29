@@ -14,6 +14,10 @@ export type Product = {
 export type CreditCardInfo = {
     cardNumber: string
     cardHolder: string
-    expirationDate: string
+    expirationDate: {
+        month: string
+        year: string
+    }
     cvv: string
+    validated?: boolean
 }

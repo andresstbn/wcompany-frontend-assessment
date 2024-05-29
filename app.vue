@@ -6,6 +6,7 @@
   <main class="max-w-6xl mx-auto px-4">
     <NuxtPage />
   </main>
+  <UNotifications />
 </template>
 
 <script setup lang="ts">

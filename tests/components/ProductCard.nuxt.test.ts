@@ -26,11 +26,9 @@ test('product card show article correctly', async () => {
     expect(screen.queryByTestId('product-image')?.getAttribute('src')).toContain(mockProduct.image)
 })
 
-test('buy button puts product in main store', async () => {
-    const buyButton = screen.queryByTestId('buy-button')
-    await buyButton?.click()
-    expect(useMainStore().selectedProduct).toEqual(mockProduct)
-    component.unmount()
-})
 
+test('product card emit event when clicked', async () => {
+    await screen.queryByTestId('buy-button')?.click()
+    expect(component.emitted('selectProduct')).toBeTruthy()
+})
 

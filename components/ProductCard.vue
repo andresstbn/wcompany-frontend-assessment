@@ -6,8 +6,8 @@
             <img data-testid="product-image" :src="product.image" class="object-contain h-full mx-auto"/>
         </div>
         <p data-testid="product-price">{{ formatCOP(product.price) }}</p>
-        <UButton  @click="selectProduct" data-testid="buy-button">
-            Buy
+        <UButton  @click="$emit('selectProduct')" block data-testid="buy-button" icon="i-heroicons-arrow-right-circle-16-solid">
+            Buy now 
         </UButton>
     </div>
 </template>
@@ -18,14 +18,9 @@ const props = defineProps<{
     product: Product
 }>()
 
+const emit = defineEmits(['selectProduct'])
 
-const mainStore = useMainStore()
-const router = useRouter()
 
-const selectProduct = () => {
-    mainStore.selectedProduct = props.product
-    router.push('/card_info')
-}
 
 </script>
 
